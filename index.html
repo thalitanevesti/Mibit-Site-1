@@ -6,97 +6,135 @@
     <title>Mibit | Tecnologia e Inovação</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <style>
         .swiper-button-next, .swiper-button-prev { color: #3b82f6; }
         .swiper-pagination-bullet-active { background: #3b82f6; }
-        .logo-img {
-            height: 40px;
-            width: auto;
-            object-fit: contain;
-        }
-        /* Estilos adicionais para os produtos */
-        .product-card {
-            @apply bg-white p-6 rounded-lg shadow-md border border-gray-100 flex flex-col justify-between;
-        }
-        .product-card h4 {
-            @apply text-xl font-semibold mb-2 text-gray-800;
-        }
-        .product-card p {
-            @apply text-gray-600 text-sm;
-        }
-        .product-card a {
-            @apply mt-4 inline-block bg-blue-500 text-white px-4 py-2 rounded-full text-sm hover:bg-blue-600 transition;
-        }
-        /* Estilo para o carrossel de produtos dentro da seção */
-        .swiper-container-product-detail {
-            width: 100%;
-            height: 100%;
-        }
-        .swiper-slide-product-detail {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .swiper-slide-product-detail img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-            border-radius: 10px;
-        }
-        /* Custom styles for social media icons */
-        .social-icons a {
-            @apply text-gray-500 hover:text-blue-600 transition duration-300;
-        }
-        .social-icons svg {
-            @apply w-6 h-6;
-        }
+        .logo-img { height: 45px; width: auto; }
+        .product-card:hover { transform: translateY(-5px); transition: 0.3s; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900 font-sans">
+<body class="bg-gray-100 text-gray-900 font-sans">
 
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+    <nav class="fixed w-full z-50 bg-white shadow-md">
         <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="#inicio" class="flex items-center">
-                <img src="./assets/images/logo-mibit.jpg" alt="Mibit Logo" class="logo-img">
-            </a>
-            
-            <div class="hidden md:flex space-x-8 font-medium">
-                <a href="#inicio" class="hover:text-blue-600 transition">Início</a>
-                <a href="https://pay.hotmart.com/S101743107D" target="_blank" class="text-blue-600 font-bold hover:underline transition">Gerador de Nota Fácil 🚀</a>
-                <a href="#produtos" class="hover:text-blue-600 transition">Produtos</a>
-                <a href="#quem-somos" class="hover:text-blue-600 transition">Quem Somos</a>
-                <a href="#como-comprar" class="hover:text-blue-600 transition">Como Comprar</a>
-                <a href="#contato" class="hover:text-blue-600 transition">Contato</a>
+            <img src="logo-mibit.jpg" alt="Mibit Logo" class="logo-img">
+            <div class="hidden md:flex space-x-6 font-semibold">
+                <a href="#inicio" class="hover:text-blue-600">Home</a>
+                <a href="#produtos" class="hover:text-blue-600">Produtos</a>
+                <a href="#social" class="hover:text-blue-600">Redes Sociais</a>
+                <a href="#lead-capture" class="bg-blue-600 text-white px-4 py-2 rounded-lg">Lista VIP</a>
             </div>
         </div>
     </nav>
 
-    <header id="inicio" class="pt-32 pb-20 px-4 text-center bg-gradient-to-b from-blue-50 to-white">
-        <h2 class="text-5xl font-extrabold mb-6">Inovação que move o seu futuro.</h2>
-        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">Conheça o <strong class="text-blue-600">Gerador de Nota Fácil</strong>: a solução definitiva para sua gestão de recibos e notas.</p>
-        
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="https://pay.hotmart.com/S101743107D" target="_blank" class="bg-green-500 text-white px-8 py-3 rounded-full font-bold hover:bg-green-600 transition shadow-lg text-lg">
-                Acessar Gerador Agora <span class="ml-2">👉</span>
-            </a>
-            <a href="#produtos" class="border border-blue-600 text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-blue-50 transition text-lg">
-                Ver Outros Produtos
-            </a>
-        </div>
+    <header id="inicio" class="pt-28 pb-12 px-4 text-center bg-white">
+        <h1 class="text-4xl font-bold mb-4">Produtos Mibit</h1>
+        <p class="text-gray-600 max-w-2xl mx-auto">Recibo/Nota em PDF com sua logo em segundos. Rápido, simples e profissional.</p>
+        <a href="https://pay.hotmart.com/S101743107D" target="_blank" class="inline-block mt-6 bg-green-500 text-white px-10 py-3 rounded-full font-bold hover:bg-green-600 shadow-lg">Acessar Produto</a>
     </header>
 
-    <main class="max-w-7xl mx-auto py-12 px-4">
-        <div class="swiper mySwiper">
+    <section id="produtos" class="max-w-7xl mx-auto py-10 px-4">
+        <h2 class="text-2xl font-bold mb-8 flex items-center">Produtos <span class="ml-2 text-gray-400 text-sm">›</span></h2>
+        
+        <div class="swiper mySwiper pb-12">
             <div class="swiper-wrapper">
-                
-                <div class="swiper-slide bg-white p-10 rounded-2xl shadow-xl border border-gray-100 min-h-[500px]" id="produtos">
-                    <h3 class="text-4xl font-bold mb-10 text-center">Nossos Produtos</h3>
+                <div class="swiper-slide product-card bg-white rounded-xl shadow-lg overflow-hidden border">
+                    <div class="grid md:grid-cols-2">
+                        <img src="arte-nota-facil.jpg" alt="Nota Fácil Lite" class="w-full h-full object-cover">
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-4">Nota Fácil Lite</h3>
+                            <p class="text-gray-600 mb-6">Emita recibos profissionais com sua logo em segundos. Sem mensalidades.</p>
+                            <ul class="mb-6 space-y-2">
+                                <li>✅ Rápido e Simples</li>
+                                <li>✅ Profissional</li>
+                                <li>✅ Com sua própria Logo</li>
+                            </ul>
+                            <a href="https://pay.hotmart.com/S101743107D" class="bg-blue-600 text-white px-6 py-2 rounded-lg block text-center font-bold">Comprar Agora</a>
+                        </div>
+                    </div>
+                </div>
 
-                    <div class="mb-12 border-b-2 border-blue-100 pb-8">
-                        <h4 class="text-3xl font-bold text-blue-700 mb-6">Destaque: Nota Fácil Lite</h4>
-                        <div class="grid md:grid-cols-2 gap-10 items-center">
-                            <div>
-                                <span class="text-blue-600 font-bold uppercase tracking-widest">Solução Inovadora</span>
-                                <h5 class="text-2xl font-bold mt-2 mb-4">Emita recibos e notas em PDF em segundos.</h5>
-                                <p class="text-gray-600 mb-6">O Nota Fácil Lite é a ferramenta perfeita para profissionais autônomos e pequenas empresas que precisam de agilidade e profissionalismo na emissão de documentos fiscais.</p>
-                                <ul class="space-y-3 mb-6">
+                <div class="swiper-slide product-card bg-white p-8 rounded-xl shadow-lg border flex items-center justify-center">
+                    <p class="text-gray-400 font-bold italic">Novo Produto Em Breve...</p>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto py-12 px-4 grid md:grid-cols-2 gap-10">
+        
+        <div id="social" class="bg-slate-900 text-white p-10 rounded-2xl flex flex-col justify-center items-center text-center shadow-2xl">
+            <h3 class="text-3xl font-bold mb-4">Siga-nos nas Redes Sociais!</h3>
+            <p class="mb-8 opacity-80">Fique por dentro das últimas novidades tecnológicas da Mibit.</p>
+            <div class="flex space-x-6 text-4xl">
+                <a href="#" class="hover:text-blue-400 transition"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-blue-500 transition"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-blue-300 transition"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+
+        <div id="lead-capture" class="bg-white p-8 rounded-2xl shadow-xl border">
+            <h3 class="text-xl font-bold mb-6">Cadastre-se para Novidades</h3>
+            <form id="leadForm" class="space-y-4">
+                <input type="text" id="nome" placeholder="Nome" class="w-full p-2 border rounded bg-gray-50 outline-none focus:ring-2 focus:ring-blue-400" required>
+                <input type="email" id="email" placeholder="E-mail" class="w-full p-2 border rounded bg-gray-50 outline-none focus:ring-2 focus:ring-blue-400" required>
+                <input type="tel" id="telefone" placeholder="Telefone" class="w-full p-2 border rounded bg-gray-50 outline-none focus:ring-2 focus:ring-blue-400" required>
+                <button type="submit" class="w-full bg-green-500 text-white font-bold py-2 rounded hover:bg-green-600 transition">Enviar Cadastro</button>
+            </form>
+
+            <div class="mt-8 overflow-x-auto">
+                <table class="w-full text-sm text-left border">
+                    <thead class="bg-gray-100 uppercase text-xs">
+                        <tr>
+                            <th class="p-2 border">Nome</th>
+                            <th class="p-2 border">E-mail</th>
+                            <th class="p-2 border">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leadTableBody">
+                        </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-10 text-gray-500 text-sm">
+        <p>&copy; 2026 Mibit - Rumo ao Primeiro Milhão.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        // Inicializar Carousel
+        var swiper = new Swiper(".mySwiper", {
+            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
+            pagination: { el: ".swiper-pagination", clickable: true },
+        });
+
+        // Lógica do CRUD (Simulada no navegador)
+        const leadForm = document.getElementById('leadForm');
+        const tableBody = document.getElementById('leadTableBody');
+
+        leadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+
+            // Adiciona na tabela
+            const row = `<tr>
+                <td class="p-2 border">${nome}</td>
+                <td class="p-2 border">${email}</td>
+                <td class="p-2 border"><button class="text-red-500 font-bold" onclick="this.parentElement.parentElement.remove()">Excluir</button></td>
+            </tr>`;
+            
+            tableBody.innerHTML += row;
+            leadForm.reset();
+            alert("Lead capturado com sucesso!");
+        });
+    </script>
+</body>
+</html>
